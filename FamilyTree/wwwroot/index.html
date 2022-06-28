@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script src="js/model.js"></script>
+    <script src="js/listView.js"></script>
+    <script src="js/singleView.js"></script>
+    <script src="js/addView.js"></script>
+    <script src="js/controller.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+
+<!-- Pause til 11:08 -->
+
+<div id="app"></div>
+
+<script>
+    getPeople();
+
+    function updateView() {
+        if (model.app.page === 'list') updateViewList();
+        else if (model.app.page === 'single') updateViewSingle();
+        else if (model.app.page === 'add') updateViewAdd();
+    }
+</script>
+</body>
+
+</html>
