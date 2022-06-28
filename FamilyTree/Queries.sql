@@ -15,3 +15,19 @@ WHERE p1.Id = '22aefe0e-f6ba-11ec-b939-0242ac120002'
 SELECT * 
 FROM Person
 WHERE Father = '22aefe0e-f6ba-11ec-b939-0242ac120002' OR Mother = '22aefe0e-f6ba-11ec-b939-0242ac120002'
+
+
+
+SELECT * FROM Person WHERE Id = '22aefe0e-f6ba-11ec-b939-0242ac120002'
+UNION
+SELECT * 
+FROM Person
+WHERE Id = (SELECT Father FROM Person WHERE Id = '22aefe0e-f6ba-11ec-b939-0242ac120002')
+UNION
+SELECT * 
+FROM Person
+WHERE Id = (SELECT Mother FROM Person WHERE Id = '22aefe0e-f6ba-11ec-b939-0242ac120002')
+UNION
+SELECT * 
+FROM Person
+WHERE Father = '22aefe0e-f6ba-11ec-b939-0242ac120002' OR Mother = '22aefe0e-f6ba-11ec-b939-0242ac120002'
